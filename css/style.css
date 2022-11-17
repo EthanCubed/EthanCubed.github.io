@@ -1,14 +1,34 @@
 body {
- background-color: rgba(82, 5, 128, 1);
- align-items: center;
+    background-color: rgba(82, 5, 128, 1);
+    align-items: center;
 }
 
 .main{
     background-color: rgb(43, 1, 83);
-    width: 412px;
-    height: 732px;
+    width: 720px;
+    height: 1280px;
     margin: auto;
     text-align: center;
+}
+
+#seriesDiv{
+    border: 5px solid black;
+    background-color: rgb(38, 2, 59);
+    width: 600px;
+    height: 800px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 60px;
+}
+
+#gameDiv{
+    border: 5px solid black;
+    background-color: rgb(38, 2, 59);
+    width: 600px;
+    height: 650px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 60px;
 }
 
 hr{
