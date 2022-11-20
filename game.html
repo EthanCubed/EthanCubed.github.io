@@ -2,21 +2,175 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
+<div class="main">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 	<title>Evan's Bowling App:: Bowling Game</title>
 	<style type="text/css" media="all">@import "css/style.css";</style>
-
-	<h1>Game # in series, more JS</h1>
+	<script src="js\javascript.js"></script>
+	<h1>Game <span id="gameNumber">0</span></h1>
+	<hr>
+	<br><br>
 </head>
 
 <body>
-	<div>Game Score Div with clickable frames</div>
-	<div>Pin deck</div>
+	<table id="framesTable">
+		<tr>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+			<th>4</th>
+			<th>5</th>
+			<th>6</th>
+			<th>7</th>
+			<th>8</th>
+			<th>9</th>
+			<th>10</th>
+		</tr>
+		<tr id="gameFrames">
+			<td id="F1">
+				<span id="F1_S1"></span>
+				<div class="vl"></div>
+				<span id="F1_S2"></span>
+			</td>
+			<td id="F2">
+				<span id="F1_S1">0</span>
+				<div class="vl"></div>
+				<span id="F1_S2">0</span>
+			</td>
+			<td id="F3">
+				<span id="F1_S1">0</span>
+				<div class="vl"></div>
+				<span id="F1_S2">0</span>
+			</td>
+			<td id="F4">
+				<span id="F1_S1">0</span>
+				<div class="vl"></div>
+				<span id="F1_S2">0</span>
+			</td>
+			<td id="F5">
+				<span id="F1_S1">0</span>
+				<div class="vl"></div>
+				<span id="F1_S2">0</span>
+			</td>
+			<td id="F6">
+				<span id="F1_S1">0</span>
+				<div class="vl"></div>
+				<span id="F1_S2">0</span>
+			</td>
+			<td id="F7">
+				<span id="F1_S1">0</span>
+				<div class="vl"></div>
+				<span id="F1_S2">0</span>
+			</td>
+			<td id="F8">
+				<span id="F1_S1">0</span>
+				<div class="vl"></div>
+				<span id="F1_S2">0</span>
+			</td>
+			<td id="F9">
+				<span id="F1_S1">0</span>
+				<div class="vl"></div>
+				<span id="F1_S2">0</span>
+			</td>
+			<td id="F10">
+				<span id="F1_S1">0</span>
+				<div class="vl"></div>
+				<span id="F1_S2">0</span>
+				<div class="vl"></div>
+				<span id="F1_S3">0</span>
+			</td>
+		</tr>
+		<tr id="frameScores">
+			<td id="FS1">0</td>
+			<td id="FS2">0</td>
+			<td id="FS3">0</td>
+			<td id="FS4">0</td>
+			<td id="FS5">0</td>
+			<td id="FS6">0</td>
+			<td id="FS7">0</td>
+			<td id="FS8">0</td>
+			<td id="FS9">0</td>
+			<td id="FS10">0</td>
+		</tr>
+	</table>
+	<br><br>
+	<table id="pinDeck">
+		<tr>
+			<td class="pinRow" id="backRow">
+				<button class="pin" 
+				id="sevenPin" 
+				onclick="pinClick('sevenPin', 7)"
+				onmouseover="onMouseOverPin(7)"
+				onmouseout="onMouseOutPin('sevenPin', 7)">
+				7</button>
+				<button class="pin" id="eightPin" 
+				onclick="pinClick('eightPin', 8)"
+				onmouseover="onMouseOverPin(8)"
+				onmouseout="onMouseOutPin('eightPin', 8)">
+				8</button>
+				<button class="pin" id="ninePin" 
+				onclick="pinClick('ninePin', 9)"
+				onmouseover="onMouseOverPin(9)"
+				onmouseout="onMouseOutPin('ninePin', 9)">
+				9</button>
+				<button class="pin" id="tenPin" 
+				onclick="pinClick('tenPin', 10)"
+				onmouseover="onMouseOverPin(10)"
+				onmouseout="onMouseOutPin('tenPin', 10)">10</button>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pinRow" id="midBackRow">
+				<button class="pin" id="fourPin" 
+				onclick="pinClick('fourPin', 4)"
+				onmouseover="onMouseOverPin(4)"
+				onmouseout="onMouseOutPin('fourPin', 4)">
+				4</button>
+				<button class="pin" id="fivePin" 
+				onclick="pinClick('fivePin', 5)"
+				onmouseover="onMouseOverPin(5)"
+				onmouseout="onMouseOutPin('fivePin', 5)">
+				5</button>
+				<button class="pin" id="sixPin" 
+				onclick="pinClick('sixPin', 6)"
+				onmouseover="onMouseOverPin(6)"
+				onmouseout="onMouseOutPin('sixPin', 6)">
+				6</button>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pinRow" id="midFrontRow">
+				<button class="pin" id="twoPin" 
+				onclick="pinClick('twoPin', 2)"
+				onmouseover="onMouseOverPin(2)"
+				onmouseout="onMouseOutPin('twoPin', 2)">
+				2</button>
+				<button class="pin" id="threePin" 
+				onclick="pinClick('threePin', 3)"
+				onmouseover="onMouseOverPin(3)"
+				onmouseout="onMouseOutPin('threePin', 3)">
+				3</button>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pinRow" id="frontRow">
+				<button class="pin" id="onePin" 
+				onclick="pinClick('onePin', 1)"
+				onmouseover="onMouseOverPin(1)"
+				onmouseout="onMouseOutPin('onePin', 1)">
+				1</button>
+			</td>
+		</tr>
+	</table>
 
 	<button>Strike/Spare</button>
 	<button>Next</button>
+	<br><br><br>
 	<a href="addGame.html">Back</a>
 </body>
-
+</div>
 </html>

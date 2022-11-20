@@ -1,6 +1,7 @@
 body {
     background-color: rgba(82, 5, 128, 1);
     align-items: center;
+    color: white;
 }
 
 .main{
@@ -9,11 +10,13 @@ body {
     height: 1280px;
     margin: auto;
     text-align: center;
+    color: white;
 }
 
 #seriesDiv{
     border: 5px solid black;
     background-color: rgb(38, 2, 59);
+    color: white;
     width: 600px;
     height: 800px;
     margin-top: 25px;
@@ -24,12 +27,110 @@ body {
 #gameDiv{
     border: 5px solid black;
     background-color: rgb(38, 2, 59);
+    color: white;
     width: 600px;
     height: 650px;
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 60px;
 }
+
+#gameSeriesTotal{
+    border: 5px solid black;
+    background-color: rgb(38, 2, 59);
+    width: 320px;
+    margin-left: 200px;
+    font-size: 30px;
+    color: white;
+}
+
+#framesTable{
+    width: 700px;
+    margin-left: 10px;
+}
+
+#framesTable, #framesTable th{
+    align-items: center;
+    background: black;
+    color: white;
+    border: white solid 2px;
+}
+
+#gameFrames, #frameScores{
+    width: 700px;
+}   
+
+#gameFrames td{
+    border: white solid 1px;
+    border-bottom: none;
+    align-items: center;
+    height: 40px;
+    font-size: 40px;
+}
+
+.vl{
+    border-right: white solid 1px;
+    height: 30px;
+    margin: none;
+    padding: none;
+}
+
+#gameFrames div{
+    padding: none;
+    margin: none;
+    display: inline-block;
+    font-size: 30px;
+}
+
+#gameFrames span{
+}
+
+#frameScores td{
+    border: white solid 1px;
+    border-top: none;
+    align-items: center;
+    width: 50px;
+    height: 20px;
+    font-size: 20px;
+}
+
+#F10, #FS10{
+    width: 70px;
+}
+.firstShot{
+    margin-right: 10px;
+}
+
+#pinDeck{
+    width: 720px;
+}
+
+#pinDeck tr, #pinDeck td{
+    all:unset;
+}
+
+.pinRow{
+    float: left;
+    margin: none;
+    align-items: center;
+}
+
+.pin{
+    all: unset;
+    display: inline-block;
+
+    background-color: white;
+    color: black;
+    font-size: 40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.pin:hover{
+}
+
 
 hr{
     height: 20px;
@@ -59,11 +160,24 @@ h3{
     border-radius: 200px;
 }
 
-a{
+a, button{
     text-decoration: none;
     color: white;
     font-size: 40px;
     padding: 20px;
     background-color: black;
     border-radius: 100px;
+    min-width: 600px;
+}
+
+button{
+    display: inline-block;
+    width: 40%;
+    margin: 25px;
+    padding: none;
+    min-width: 0px;
+}
+
+a:hover, button:hover{
+    background-color: darkgray;
 }
