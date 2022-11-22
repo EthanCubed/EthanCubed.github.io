@@ -14,6 +14,8 @@ const pins =
     ["tenPin", true]
     ];
 
+
+
 function onMouseOverPin(number){
     x = document.getElementById(pins[number-1][0]);
 
