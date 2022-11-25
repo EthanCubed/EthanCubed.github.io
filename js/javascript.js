@@ -1,295 +1,293 @@
-const pinCheckArray = [true, true, true, true, true, true, true, true, true, true];
-//true for up, false for down
+class Pin{
+    name;
+    value = true;
+    number;
+
+    constructor(pinName, pinNumber){
+        this.name = pinName;
+        this.number = pinNumber;
+    }
+
+
+    getElement(){
+        return document.getElementById(this.name);
+    }
+
+    changeColors(on){
+        //true for on, false for off
+
+        if(this.value){
+            if(on){
+                this.getElement().style.backgroundColor = "darkgrey";
+                this.getElement().style.color = "white";
+            }else{
+                this.getElement().style.backgroundColor = "white";
+                this.getElement().style.color = "black";
+            }
+        }else{
+            if(!on){
+                this.getElement().style.backgroundColor = "darkgrey";
+                this.getElement().style.color = "white";
+            }else{
+                this.getElement().style.backgroundColor = "white";
+                this.getElement().style.color = "black";
+            }
+        }
+    }
+
+    knockDown(){
+        this.value = false;
+        this.changeColors(false);
+    }
+
+    putUp(){
+        this.value = true;
+        this.changeColors(false);
+    }
+
+    toggle() {
+        if(this.value){
+            this.knockDown();
+        }else{
+            this.putUp();
+        }
+    }
+}
+
+class Frame{
+    frameName;
+    totalScoreName;
+    firstShotScore = 0;
+    secondShotScore = 0;
+    thirdShotScore = 0;
+    frameElem;
+    scoreElem;
+    spared = false;
+    split = false;
+
+    constructor(frameName, totalScoreName){
+        this.frameName = frameName;
+        this.totalScoreName = totalScoreName;
+
+        this.frameElem = document.getElementById(frameName);
+        this.scoreElem = document.getElementById(totalScoreName);
+    }
+
+    setFirstScore(score){
+        this.firstShotScore = score;
+        this.setFrameScore();
+    }
+
+    setSecondScore(score){
+        this.secondShotScore = (score - this.firstShotScore);
+        this.setFrameScore();
+    }
+
+    setThirdScore(score){
+        if((this.firstShotScore + this.secondShotScore) == 10){
+            this.thirdShotScore = score;
+        }else if(this.firstShotScore == 10){
+            this.thirdShotScore = (score - this.secondShotScore);
+        }
+        this.setFrameScore();
+    }
+
+    calcScore(f2, f3){
+        score = (this.firstShotScore + this.secondShotScore);
+
+        if(score == 10){
+            //Spare
+            score += f2.firstShotScore;
+
+            if(this.firstShotScore == 10){
+                //Strike
+                if(f2.firstShotScore == 10){
+                    //Double Strike
+                    score += f3.firstShotScore;
+                }else{
+                    score += f2.secondShotScore;
+                }
+            }
+        }
+
+        return score;
+    }
+
+    
+    setFrameScore(){
+
+        //Check Spare
+        if(this.firstShotScore + this.secondShotScore == 10 && this.firstShotScore != 10){
+            this.spared = true;
+        }
+
+        if(this.firstShotScore == 10){
+            this.frameElem.innerHTML = "X";
+        }else if(this.spared){
+            this.frameElem.innerHTML = (this.firstShotScore + "/");
+        }else{
+            if(this.firstShotScore == 0){
+                this.frameElem.innerHTML = "-";
+            }else{
+                this.frameElem.innerHTML = this.firstShotScore;
+            }
+            if(this.secondShotScore == 0){
+                this.frameElem.innerHTML += " -";
+            }else{
+                this.frameElem.innerHTML += " " + this.secondShotScore;
+            }
+        }
+    }
+
+}
+
+class Game{
+
+}
+
+class Series{
+
+}
 
 currentFrame = 1;
 currentShot = 1;
 
-const onePin = {
-    name: "onePin",
-    value: true,
-    number: 1,
-    toggle: function() {
-        this.value = !this.value;
-    }
-};
+//Pin Array Start
 
-const twoPin = {
-    name: "twoPin",
-    value: true,
-    number: 2,
-    toggle: function() {
-        this.value = !this.value;
-    }
-};
+let pinArray = [];
 
-const threePin = {
-    name: "threePin",
-    value: true,
-    number: 3,
-    toggle: function() {
-        this.value = !this.value;
-    }
-};
-
-const fourPin = {
-    name: "fourPin",
-    value: true,
-    number: 4,
-    toggle: function() {
-        this.value = !this.value;
-    }
-};
-
-const fivePin = {
-    name: "fivePin",
-    value: true,
-    number: 5,
-    toggle: function() {
-        this.value = !this.value;
-    }
-};
-
-const sixPin = {
-    name: "sixPin",
-    value: true,
-    number: 6,
-    toggle: function() {
-        this.value = !this.value;
-    }
-};
-
-const sevenPin = {
-    name: "sevenPin",
-    value: true,
-    number: 7,
-    toggle: function() {
-        this.value = !this.value;
-    }
-};
-
-const eightPin = {
-    name: "eightPin",
-    value: true,
-    number: 8,
-    toggle: function() {
-        this.value = !this.value;
-    }
-};
-
-const ninePin = {
-    name: "ninePin",
-    value: true,
-    number: 9,
-    toggle: function() {
-        this.value = !this.value;
-    }
-};
-
-const tenPin = {
-    name: "tenPin",
-    value: true,
-    number: 10,
-    toggle: function() {
-        this.value = !this.value;
-    }
-};
-
-const firstFrame = {
-    name: "F1",
-    scoreName: "FS1",
-    firstShotScore: 0,
-    seocndShotScore: 0,
-    score: calcScore(this, secondFrame, thirdFrame)
-};
-
-const secondFrame = {
-    name: "F2",
-    scoreName: "FS2",
-    firstShotScore: 0,
-    seocndShotScore: 0,
-    score: calcScore(this, thirdFrame, fourthFrame)
-};
-
-const thirdFrame = {
-    name: "F3",
-    scoreName: "FS3",
-    firstShotScore: 0,
-    seocndShotScore: 0,
-    score: calcScore(this, fourthFrame, fifthFrame)
-};
-
-const fourthFrame = {
-    name: "F4",
-    scoreName: "FS4",
-    firstShotScore: 0,
-    seocndShotScore: 0,
-    score: calcScore(this, fifthFrame, sixthFrame)
-};
-
-const fifthFrame = {
-    name: "F5",
-    scoreName: "FS5",
-    firstShotScore: 0,
-    seocndShotScore: 0,
-    score: calcScore(this, sixthFrame, seventhFrame)
-};
-
-const sixthFrame = {
-    name: "F6",
-    scoreName: "FS6",
-    firstShotScore: 0,
-    seocndShotScore: 0,
-    score: calcScore(this, seventhFrame, eighthFrame)
-};
-
-const seventhFrame = {
-    name: "F7",
-    scoreName: "FS7",
-    firstShotScore: 0,
-    seocndShotScore: 0,
-    score: calcScore(this, eighthFrame, ninthFrame)
-};
-
-const eighthFrame = {
-    name: "F8",
-    scoreName: "FS8",
-    firstShotScore: 0,
-    seocndShotScore: 0,
-    score: calcScore(this, ninthFrame, tenthFrame)
-};
-
-const ninthFrame = {
-    name: "F9",
-    scoreName: "FS9",
-    firstShotScore: 0,
-    seocndShotScore: 0,
-    score: calcScore(this, tenthFrame, sixthFrame)
-};
-
-const tenthFrame = {
-    name: "F10",
-    scoreName: "FS10",
-    firstShotScore: 0,
-    seocndShotScore: 0,
-    thirdShotScore: 0,
-    score: function() {
-        this.firstShotScore + 
-        this.seocndShotScore +
-        this.thirdShotScore;
-    },
-    thirdShotAvailable: function(){
-        if((this.firstShotScore + this.seocndShotScore) >= 10){
-            return true;
-        }
-    }
-};
-
-function calcScore(x, y, z){
-    score = 0;
-    if(x.firstShotScore == 10){
-        score += (x.firstShotScore + y.firstShotScore);
-
-        if(y.firstShotScore == 10){
-            score += z.firstShotScore;
-        }else{
-            score += y.seocndShotScore;
-        }
-    }
-    return score;
+for(i = 0; i < 10; i++){
+    namePin = "pin" + (i + 1);
+    pinArray[i] = new Pin(namePin, (i + 1));
 }
 
-const pins = [onePin, twoPin, threePin, fourPin, fivePin, sixPin, sevenPin, eightPin, ninePin, tenPin];
+for(i = 0; i < pinArray.length; i++){
+    console.log(pinArray[i]);
+}
 
-const frmes = [firstFrame, secondFrame, thirdFrame, fourthFrame, fifthFrame, sixthFrame, seventhFrame, eighthFrame, ninthFrame, tenthFrame]
+//Pin Array End
 
-function onMouseOverPin(number){
-    x = document.getElementById(pins[number - 1].name.valueOf());
+//Frame Array Start
 
-    backgroundColor = x.style.backgroundColor;
+let frameArray = [];
+
+for(i = 0; i < 10; i++){
+
+    nameFrame = "F" + (i + 1);
+    scoreName = "FS" + (i + 1);
+    frameArray[i] = new Frame(nameFrame, scoreName);
+}
+
+for(i = 0; i < frameArray.length; i++){
+    console.log(frameArray[i]);
+}
+
+//Frame Array End
+function onMouseOverPin(x){
+
+    currPin = pinArray[x - 1];
     
-    if(pins[number - 1].value.valueOf()){
-        x.style.color = "white";
-        x.style.backgroundColor = "darkgrey";
-    }else{
-        x.style.backgroundColor = "white";
-        x.style.color = "black";
-    }
+    currPin.changeColors(true);
 }
 
-function onMouseOutPin(name, number){
-    x = document.getElementById(name);
+function onMouseOutPin(x){
+    currPin = pinArray[x-1];
+    element = currPin.getElement();
 
-    backgroundColor = x.style.backgroundColor;
+    currPin.changeColors(false);
 
-    if(pins[number - 1].value.valueOf()){
-        x.style.color = "black";
-        x.style.backgroundColor = "white";
-    }else{
-        x.style.color = "white";
-        x.style.backgroundColor = "darkgrey";
-    }
 }
 
-function pinClick(name, number){
-    x = document.getElementById(pins[number - 1].name.valueOf());
-
-    if(pins[number - 1].value.valueOf()){
-        x.style.color = "white";
-        x.style.backgroundColor = "darkgrey";
-    }else{
-        x.style.color = "black";
-        x.style.backgroundColor = "white";
-    }
-
-    pins[number - 1].toggle();  
+function pinClick(x){
+    currPin = pinArray[x-1];
     
+    currPin.toggle();
+
     updateScore();
     
 }
 
 function getCount(){
     count = 0;
-
-    for(i = 0; i < pins.length; i++){
-        if(!pins[i].value.valueOf()){
-            count++;
-        }
-    }
     return count;
 }
 
 function strikeSpare(){
 
-    for(i = 0; i < pins.length; i++){
-        pins[i].value = false;
-
-        document.getElementById(pins[i].name.valueOf()).style.color = "white";
-        document.getElementById(pins[i].name.valueOf()).style.backgroundColor = "darkgrey";
+    for(i = 0; i < pinArray.length; i++){
+        pinArray[i].knockDown();
     }
-
     updateScore();
 }
-
 function updateScore(){
     score = 0
-    for(i = 0; i < pins.length; i++){
-        if(!pins[i].value.valueOf()){
+
+    for(i = 0; i < pinArray.length; i++){
+        if(!pinArray[i].value){
             score++;
         }
     }
 
-    if(score == 10){
-        score = 'X';
-    }else if(score == 0){
-        score = '-';
+    if(currentShot == 1){
+        frameArray[currentFrame - 1].setFirstScore(score);
+        console.log(score);
+    }else if(currentShot == 2){
+        frameArray[currentFrame - 1].setSecondScore(score);
+    }else if(currentShot == 3){
+        frameArray[currentFrame - 1].setThirdScore(score);
+    }
+}
+
+function getCurrentScore(){
+    score = 0;
+    for(i = 0; i < pinArray.length; i++){
+        if(!pinArray[i].value){
+            score++;
+        }
     }
 
-    document.getElementById("F1").innerHTML = score.valueOf();
+    return score;
 }
 
 function progressNext(){
-    document.getElementById("F10").innerHTML = getCount();
     if(currentShot == 1){
+        frameArray[currentFrame - 1].firstShotScore = getCurrentScore();
 
+        if(getCurrentScore() == 10){
+            currentFrame++;
+            for(i = 0; i < pinArray.length; i++){
+                pinArray[i].putUp();
+            }
+        }else{
+            currentShot++;
+        }
+    }else if(currentShot == 2){
+
+        frameArray[currentFrame - 1].secondShotScore = 
+            (getCurrentScore() - frameArray[currentFrame - 1].firshotScore);
+
+        currentShot = 1;
+        currentFrame++;
+        for(i = 0; i < pinArray.length; i++){
+            pinArray[i].putUp();
+        }
     }
+
+    console.log("score: " + getCurrentScore());
+    console.log("shot: " + currentShot);
+    console.log("frame: " + currentFrame);
+}
+
+function goBack(){
+    if(currentShot == 1){
+        if(currentFrame != 1){
+            currentFrame--;
+        }
+    }else if(currentShot == 2){
+        currentShot = 1;
+    }
+
+    console.log("score: " + getCurrentScore());
+    console.log("shot: " + currentShot);
+    console.log("frame: " + currentFrame);
 }
