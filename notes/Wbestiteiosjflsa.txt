@@ -1,0 +1,32 @@
+each frame needs
+
+-array of pin set up
+
+--for each shot, with split tracking (pre determined array with split possiblities)
+
+--makes sure that you can't alter the first shot pins on the second shot
+
+-score
+
+-way to detmine which shot and frame you're on
+
+-spared?
+
+
+
+
+-------------------------------SYSTEM--------------------------------
+
+Add Series
+	creates an array of game object
+
+Add Game
+	creates an array of 10 frames
+	stores statistics of spares, strikes, first ball avg
+
+Frame
+	holds array of pin setups, scores, etc...
+
+Pin
+	up or down
+	toggle function

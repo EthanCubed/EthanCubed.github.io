@@ -1,0 +1,30 @@
+Website Work Needed
+
+-Back Function
+
+-10th Frame
+
+-Total Score
+
+-Strike/Spare actually setting all to down lol
+
+-fixing the "-1" issue, aka user don't be fucking stupid lmao
+
+--prolly have the pins go black black if they're off for the first shot
+
+--change layout?
+			Prev				Next
+				  Strike/Spare
+
+-some way to tell which frame and shot the user is on
+
+-next resetting the values
+
+-a way to save the layout of pins
+
+-split detection and score color change for it
+
+-a way to store all of the games and access them on another page, gotta create buttons that go to the next 
+	page while opening it with the correct data and such. IDK if we're gonna get the statistics working
+
+-contact me page for the form requirement
