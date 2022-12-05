@@ -8,10 +8,17 @@ class Frame{
     split = false;
     firstShotScore = 0;
     secondShotScore = 0;
+    totalScore = 0;
     firstText = "-";
     secondText = "-";
     firstShotPins = [];
     secondShotPins = [];
+    pins = [new Pin(1, "pin1"),
+            new Pin(2, "pin2"),
+            new Pin(3, "pin3"),
+            new Pin(4, "pin4"),
+            new Pin(5, "pin5"),
+            new Pin(6, "pin6")];
     number;
     textName;
     scoreTextName;
@@ -29,7 +36,10 @@ class Game{
     spareRate = 100;
     strikeRate = 100;
     score = 0;
-    frames = [];
+    frames = [new Frame(1, "frame1", "frame1Score"),
+                new Frame(2, "frame2", "frame2Score"),
+                new Frame(3, "frame3", "frame3Score"),
+                new Frame(4, "frame4", "frame4Score")];
 
     constructor(num){
         this.gameNumber = num;
@@ -50,16 +60,16 @@ class Game{
 
 class Series{
     seriesDate;
-    type;
+    num;
     total = 0;
     average = 0;
     amtOfGames = 1;
     games = [];
     gameLinks = [];
 
-    constructor(date, type){
+    constructor(date, number){
         this.seriesDate = date;
-        this.type = type;
+        this.num = number;
     }
 
     addGame(){
