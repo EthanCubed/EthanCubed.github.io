@@ -8,16 +8,18 @@
 	<title>Evan's Bowling App:: Add Game</title>
 	<style type="text/css" media="all">@import "css/style.css";</style>
 
-	<h1>11/16/2022</h1>
+	<h1 id="seriesPageDate">Series # <br> 11/16/2022</h1>
 </head>
 
-<body>
-	<a href="game.html">Add Game</a>
-	<div id="gameDiv">This div will host the games associated with this series, JS time woooooo</div>
+<body onload="loadGames()">
+	<button onclick="createGame();">Add Game</button>
+	<div id="gameDiv">
+
+	</div>
 	<div id="gameSeriesTotal" >Date's Series Total: <span id="seriesTotal">0</span></div><br><br>
-	<a href="stats.html">Date's Stats</a>
 	<br><br><br><br>
-	<a href="addSeries.html">Back</a><br>
+	<a class="link" href="addSeries.html">Back</a><br>
 </body>
 </div>
+<script src="js\js2.js"></script>
 </html>

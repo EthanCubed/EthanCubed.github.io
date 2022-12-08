@@ -8,18 +8,22 @@
 	<title>Evan's Bowling App:: Add Series</title>
 	<style type="text/css" media="all">@import "css/style.css";</style>
 
-	<h1>Open Play</h1>
+	<h1>Record Series</h1>
 	<hr>
 	<br><br>
+
+	<button onclick="clearss()">clear</button>
 </head>
 
-<body>
-	<a href="addGame.html">Add Series</a>
-	<div id="seriesDiv">
-		<p>Div here that will host all of the series added for this type. Probably an array list in JS, or the JS equivalent, I'm used to java</p>
+<body onload="loadingSerieis()">
+	<button onclick="createSeries()">Add Series</button>
+	<div id="seriesDiv" >
+		
 	</div>
 
-	<a href="recordGame.html">Back</a>
+	<a class="link" href="index.html">Back</a>
 </body>
+
+<script src="js\js2.js"></script>
 </html>
 
