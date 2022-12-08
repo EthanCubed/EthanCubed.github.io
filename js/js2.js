@@ -293,3 +293,13 @@ function loadGames(){
         new Game(x.games[i].gameNumber);
     }
 }
+
+function togglePinPos(name){
+    
+    x = document.getElementById("pinPositionBTN")
+    if(x.innerText == "Up"){
+        x.innerText = "Down";
+    }else{
+        x.innerText = "Up";
+    }
+}

@@ -15,9 +15,32 @@
 	</head>
 
 	<body>
-		<table>
-
-		</table>
+		<form id="contactForm" action="https://formsubmit.co/fbc7101e5163cb1f8e792564cee85f22" method="POST">
+			<input type="hidden" name="_next" value="index.html">
+			<input type="hidden" name="_captcha" value="false">
+			
+			<table id="contactTable">
+				<tr>
+					<td><input type="text" name="name" placeholder="Name" required></td>
+				</tr>
+				<tr>
+					<td><input type="email" name="email" placeholder="Email" required></td>
+				</tr>
+	
+				<tr>
+					<td><textarea type="text" name="message" placeholder="Message" rows="10" required></textarea></td>
+				</tr>
+				
+				<tr>
+					<td><button type="submit" target="_blank" rel="noopener noreferrer">Submit</button></td>
+				</tr>
+		
+				
+				
+			</table>
+			
+		</form>
+	
 		<br><br><br><br>
 		<a class="link" href="settings.html">Back</a>
 	</body>

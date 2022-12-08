@@ -68,6 +68,25 @@ body {
     font-size: 40px;
 }
 
+#contactForm{
+    
+    align-items: center;
+}
+
+#contactTable{
+    align-items: center;
+
+}
+
+#contactTable tr, #contactTable td{
+    width: 720px;
+}
+
+input, textarea, #contactTable button{
+    width: 400px;
+    margin: 5px;
+}
+
 .vl{
     border-right: white solid 1px;
     height: 30px;
