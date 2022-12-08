@@ -18,7 +18,7 @@ body {
     background-color: rgb(38, 2, 59);
     color: white;
     width: 600px;
-    height: 800px;
+    height: 600px;
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 60px;
@@ -29,7 +29,7 @@ body {
     background-color: rgb(38, 2, 59);
     color: white;
     width: 600px;
-    height: 650px;
+    height: 500px;
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 60px;
@@ -128,10 +128,22 @@ body {
     margin: 20px;
 }
 
+.link{
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    padding: 20px;
+    background-color: black;
+    border-radius: 100px;
+    min-width: 600px;
+    margin-top: none;
+}
+
 hr{
     height: 20px;
     border-color: black;
     background-color: black;
+    margin: none;
 }
 
 h1{
@@ -156,7 +168,12 @@ h3{
     border-radius: 200px;
 }
 
-a, button{
+h4{
+    
+}
+
+button{
+    all: clear;
     text-decoration: none;
     color: white;
     font-size: 40px;
@@ -164,12 +181,12 @@ a, button{
     background-color: black;
     border-radius: 100px;
     min-width: 600px;
+    margin-top: none;
 }
 
 button{
     display: inline-block;
     width: 40%;
-    margin: 25px;
     padding: none;
     min-width: 0px;
 }

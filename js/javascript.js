@@ -1,3 +1,5 @@
+startingPinPosition = true;
+
 class Pin{
     name;
     value = true;
@@ -290,4 +292,15 @@ function goBack(){
     console.log("score: " + getCurrentScore());
     console.log("shot: " + currentShot);
     console.log("frame: " + currentFrame);
+}
+
+function togglePinPos(name){
+    startingPinPosition = !startingPinPosition;
+
+    x = document.getElementById("pinPositionBTN")
+    if(!startingPinPosition){
+        x.innerHTML = "Down";
+    }else{
+        x.innerHTML = "Up";
+    }
 }
