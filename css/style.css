@@ -158,6 +158,13 @@ input, textarea, #contactTable button{
     margin-top: none;
 }
 
+a:visited, a{
+    color: white;
+    font-size: 25px;
+
+    background-color: black;
+}
+
 hr{
     height: 20px;
     border-color: black;
@@ -212,4 +219,20 @@ button{
 
 a:hover, button:hover{
     background-color: darkgray;
+}
+
+.infoBTN{
+    all: unset;
+    font-size: 20px;
+    padding: 5px;
+    margin: 2px;
+    background-color: black;
+}
+
+#coreExplain{
+    margin: 20px;
+    padding: 1px;
+    height: 400px;
+
+    background-color: black;
 }
