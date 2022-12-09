@@ -14,18 +14,18 @@
 		<br><br>
 	</head>
 
-	<body>
+	<body onload="changeText('coreTitle', 'coreDesc', 'pin')">
 		<h2>The core is the weightblock in the middle of the ball and generally determines the shape the ball makes on the lane</h2>
-		<button class="infoBTN" id="symBTN">Symmetry</button>
-		<button class="infoBTN" id="pinCGMB">Pin / CG / Mass Bias</button>
-		<button class="infoBTN" id="diffBTN">Differential</button>
-		<button class="infoBTN" id="strengthBTN_CORE">Strength</button>
+		<button class="infoBTN" id="pinCGMB" onclick="changeText('coreTitle', 'coreDesc', 'pin')">Pin / CG / Mass Bias</button>
+		<button class="infoBTN" id="diffBTN" onclick="changeText('coreTitle', 'coreDesc', 'diff')">Differential</button>
+		<button class="infoBTN" id="strengthBTN_CORE" onclick="changeText('coreTitle', 'coreDesc', 'strength')">Strength</button>
 		<div id="coreExplain">
-			<h2>Symmetry</h2>
-			<p>Description</p>
+			<h2 id="coreTitle">Symmetry</h2>
+			<p id="coreDesc">Description</p>
 		</div>
 		<br><br><br>
 		<a class="link" href="information.html">Back</a>
 	</body>
 </div>
+<script src="js\inforJS.js"></script>
 </html>

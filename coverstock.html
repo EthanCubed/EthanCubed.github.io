@@ -14,20 +14,21 @@
 		<br><br>
 	</head>
 
-	<body>
+	<body onload="changeText('coverTitle', 'coverDesc', 'solid')">
 		<h2>The "shell" of the ball. This is the part of the ball that actually makes contact with the lane.</h2>
-		<button class="infoBTN" id="solidBTN">Solid</button>
-		<button class="infoBTN" id="pearlBTN">Pearl</button>
-		<button class="infoBTN" id="hybBTN">Hybrid</button>
-		<button class="infoBTN" id="urethaneBTN">Urethane</button>
-		<button class="infoBTN" id="finsihBTN">Finishes</button>
-		<button class="infoBTN" id="strengthBTN_COVER">Strength</button>
+		<button class="infoBTN" id="solidBTN" onclick="changeText('coverTitle', 'coverDesc', 'solid')">Solid</button>
+		<button class="infoBTN" id="pearlBTN" onclick="changeText('coverTitle', 'coverDesc', 'pearl')">Pearl</button>
+		<button class="infoBTN" id="hybBTN" onclick="changeText('coverTitle', 'coverDesc', 'hyb')">Hybrid</button>
+		<button class="infoBTN" id="urethaneBTN" onclick="changeText('coverTitle', 'coverDesc', 'urethane')">Urethane</button>
+		<button class="infoBTN" id="finsihBTN" onclick="changeText('coverTitle', 'coverDesc', 'finishes')">Finishes</button>
+		<button class="infoBTN" id="strengthBTN_COVER" onclick="changeText('coverTitle', 'coverDesc', 'strength')">Strength</button>
 		<div id="coreExplain">
-			<h2>Symmetry</h2>
-			<p>Description</p>
+			<h2 id="coverTitle">Symmetry</h2>
+			<p id="coverDesc">Description</p>
 		</div>
 		<br><br><br>
 		<a class="link" href="information.html">Back</a>
 	</body>
 </div>
+<script src="js\inforJS.js"></script>
 </html>

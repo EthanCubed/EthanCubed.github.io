@@ -148,6 +148,7 @@ input, textarea, #contactTable button{
 }
 
 .link{
+    all:unset;
     text-decoration: none;
     color: white;
     font-size: 40px;
@@ -235,4 +236,10 @@ a:hover, button:hover{
     height: 400px;
 
     background-color: black;
+}
+
+h2{
+    background-color: black;
+    padding: 2px;
+    padding-top: 0px;
 }
