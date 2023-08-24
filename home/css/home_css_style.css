@@ -1,0 +1,39 @@
+h1 {
+    text-align: center;
+    background-color: rgb(59, 59, 59);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    border-radius: 50px;
+}
+
+html {
+    background-color: gray;
+}
+
+.homeBox {
+    width: 49%;
+    height: 100%;
+    border: 4px black solid;
+    border-radius: 20px;
+}
+
+.projectLink{
+    text-align: center;
+    margin-left: 40%;
+    min-width: 50%;
+    border: 4px black solid;
+}
+
+#leftHome {
+    float: left;
+}
+
+#rightHome {
+    float: right;
+}
+
+h3, h5 {
+    text-align: center;
+    color: white;
+}
