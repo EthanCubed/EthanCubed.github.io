@@ -1,0 +1,56 @@
+/*------------regular tags-----------------*/
+html {
+    font-family: "Roboto", sans-serif;
+    align-items: center;
+}
+
+body{
+    width: 720px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    background-color: gray;
+}
+
+h1{
+    text-align: center;
+    width: 100%;
+}
+
+hr{
+    border: cyan 3px solid;
+}
+
+nav{
+    margin:auto;
+}
+
+/*--------------classes--------------*/
+.link, .link:visited{
+    display: block;
+    border: cyan solid 3px;
+    background-color: cyan;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+
+.content{
+    height: 1280px;
+    border: 1px cyan solid;
+    margin: auto;
+    background-color: rgb(32, 32, 32);
+    color: cyan;
+}
+
+/*--------------ids--------------------*/
+#seriesDiv{
+    height: 1000px;
+    border: cyan 3px solid;
+    margin: 15px;
+    background-color: black;
+}

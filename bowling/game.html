@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<div class="main">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<title>Evan's Bowling App:: Bowling Game</title>
+	<link rel="stylesheet" href="css/css.css">
+	
+	<h1>Game <span id="gameNumber">0</span></h1>
+	<hr>
+	<br><br>
+</head>
+
+<body>
+	<table id="framesTable">
+		<tr>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+			<th>4</th>
+			<th>5</th>
+			<th>6</th>
+			<th>7</th>
+			<th>8</th>
+			<th>9</th>
+			<th>10</th>
+		</tr>
+		<tr id="gameFrames">
+			<td id="F1">
+				
+			</td>
+			<td id="F2">
+				
+			</td>
+			<td id="F3">
+				
+			</td>
+			<td id="F4">
+				
+			</td>
+			<td id="F5">
+				
+			</td>
+			<td id="F6">
+				
+			</td>
+			<td id="F7">
+				
+			</td>
+			<td id="F8">
+				
+			</td>
+			<td id="F9">
+				
+			</td>
+			<td id="F10">
+
+			</td>
+		</tr>
+		<tr id="frameScores">
+			<td id="FS1">0</td>
+			<td id="FS2">0</td>
+			<td id="FS3">0</td>
+			<td id="FS4">0</td>
+			<td id="FS5">0</td>
+			<td id="FS6">0</td>
+			<td id="FS7">0</td>
+			<td id="FS8">0</td>
+			<td id="FS9">0</td>
+			<td id="FS10">0</td>
+		</tr>
+	</table>
+	<br><br>
+	<table id="pinDeck">
+		<tr>
+			<td class="pinRow" id="backRow">
+				<button class="pin" 
+				id="pin7" 
+				onclick="pinClick(7)"
+				onmouseover="onMouseOverPin(7)"
+				onmouseout="onMouseOutPin(7)">
+				7</button>
+				<button class="pin" id="pin8" 
+				onclick="pinClick(8)"
+				onmouseover="onMouseOverPin(8)"
+				onmouseout="onMouseOutPin(8)">
+				8</button>
+				<button class="pin" id="pin9" 
+				onclick="pinClick(9)"
+				onmouseover="onMouseOverPin(9)"
+				onmouseout="onMouseOutPin(9)">
+				9</button>
+				<button class="pin" id="pin10" 
+				onclick="pinClick(10)"
+				onmouseover="onMouseOverPin(10)"
+				onmouseout="onMouseOutPin(10)">10</button>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pinRow" id="midBackRow">
+				<button class="pin" id="pin4" 
+				onclick="pinClick(4)"
+				onmouseover="onMouseOverPin(4)"
+				onmouseout="onMouseOutPin(4)">
+				4</button>
+				<button class="pin" id="pin5" 
+				onclick="pinClick(5)"
+				onmouseover="onMouseOverPin(5)"
+				onmouseout="onMouseOutPin(5)">
+				5</button>
+				<button class="pin" id="pin6" 
+				onclick="pinClick(6)"
+				onmouseover="onMouseOverPin(6)"
+				onmouseout="onMouseOutPin(6)">
+				6</button>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pinRow" id="midFrontRow">
+				<button class="pin" id="pin2" 
+				onclick="pinClick(2)"
+				onmouseover="onMouseOverPin(2)"
+				onmouseout="onMouseOutPin(2)">
+				2</button>
+				<button class="pin" id="pin3" 
+				onclick="pinClick(3)"
+				onmouseover="onMouseOverPin(3)"
+				onmouseout="onMouseOutPin(3)">
+				3</button>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="pinRow" id="frontRow">
+				<button class="pin" id="pin1" 
+				onclick="pinClick(1)"
+				onmouseover="onMouseOverPin(1)"
+				onmouseout="onMouseOutPin(1)">
+				1</button>
+			</td>
+		</tr>
+	</table>
+
+	<button onclick="goBack()">Prev Shot</button>
+	<button onclick="progressNext()">Next Shot</button>
+	<br><br>
+	<a class="link" href="bowling_addGame.html" style="margin-right: 120px">Back</a>
+	<button onclick="strikeSpare()">Strike/Spare</button>
+	
+</body>
+</div>
+
+<script src="js\bowling_js_js2.js"></script>
+</html>
